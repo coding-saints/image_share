@@ -1,4 +1,6 @@
-/* CSS declarations go here */
+/* This CSS is in much need of help; basic css-trick needed for app to build
+TODO: add colors, change font-size etc. Stop working on so many different libs you ass
+*/
 .thumbnail {
     min-height:500px;
     max-width:500px;
