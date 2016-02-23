@@ -1,12 +1,12 @@
 // this is image_share.js
 Images = new Mongo.Collection("images");
 console.log(Images.find().count());
-
+//this is for recognizing if the code should be server to user
 if (Meteor.isClient) {
   Template.images.helpers({images:
     Images.find({}, {sort:{createdOn: -1, rating:-1}})
   });
- 
+ //events locate the class
  Template.images.events({
   'click .js-image':function(event){
     $(event.target).css("width", "50px");
@@ -14,7 +14,7 @@ if (Meteor.isClient) {
   'click .js-del-image':function(event){
     var image_id = this._id;
     console.log(image_id);
-    //use jQuery to hid image component
+    //use jQuery to hide image component
     //then remove it at the end of animation
     $("#"+image_id).hide('slow', function(){
     Images.remove({"_id":image_id});
@@ -26,7 +26,7 @@ if (Meteor.isClient) {
     var image_id = this.id;
     console.log(image_id);
 
-
+//barbatus
 Images.update({_id:image_id}, 
               {$set: {rating:rating}});
   },
@@ -35,7 +35,7 @@ Images.update({_id:image_id},
 }
 
 });
-
+//more events
   Template.image_add_form.events({
     'submit .js-add-image':function(event){
       var img_src, img_alt;
