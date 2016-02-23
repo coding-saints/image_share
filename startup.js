@@ -1,3 +1,5 @@
+
+// This code is for server side (cmd) to locate how many images are represented at start up)
 if (Meteor.isServer){
 	Meteor.startup(function(){
 		if (Images.find().count() == 0){
